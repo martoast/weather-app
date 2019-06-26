@@ -4,7 +4,7 @@
       <a
         class="navbar-brand"
         href="#"
-      >Emoji Weather...</a>
+      >Emoji Weather</a>
 
     </nav>
     <main class="container mt-4">
