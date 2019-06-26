@@ -48,9 +48,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   - [x] Create function to call API with hard coded lat long
 - [x] Call API in mounted method of component
 - [x] Add current weather to page
-- [] Add emojis
-- [] Allow user to enter location
-  - [] Geocode location to lat long
+- [x] Add emojis
+- [x] Allow user to enter location
+  - [x] Geocode location to lat long
   - [] Update weather on page
 - [] Show location name
 - [] Add weather map to page

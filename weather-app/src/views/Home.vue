@@ -1,7 +1,25 @@
 <template>
   <div class="home">
     <div class="row">
-      <div class="col-6 offset-3">
+      <div class="input-group mb-3">
+        <input
+          v-model="location"
+          type="text"
+          class="form-control"
+          placeholder="Enter Location"
+        >
+        <div class="input-group-append">
+          <button
+            @click='updateLocation'
+            class="btn btn-outline-secondary"
+            type="button"
+          >Search</button>
+        </div>
+      </div>
+      <div
+        class="col-6 offset-3"
+        v-if="forecast"
+      >
         <div class="card text-white bg-secondary mb-3 col-6 offset-3">
           <div class="card-header">Current Weather in {{ forecast.timezone }}</div>
           <div class="card-body">
@@ -27,7 +45,8 @@ export default {
   name: "home",
   data() {
     return {
-      forecast: {},
+      location: "",
+      forecast: null,
       icons: {
         "clear-day": "🌞",
         "clear-night": "🌙",
@@ -41,6 +60,13 @@ export default {
         "partly-cloudy-night": "🌌"
       }
     };
+  },
+  methods: {
+    updateLocation() {
+      API.getCoordinates(this.location).then(result => {
+        console.log(result);
+      });
+    }
   },
   mounted() {
     API.getForecast().then(result => {
