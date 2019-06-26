@@ -6,7 +6,7 @@
           <div class="card-header">Current Weather in {{ forecast.timezone }}</div>
           <div class="card-body">
             <h4 class="card-title">{{ forecast.currently.summary }}</h4>
-            <div class="card-text">{{ forecast.currently.icon }} {{ forecast.currently.temperature }} °F</div>
+            <div class="card-text icon-temp"><span class=emoji>{{icons[forecast.currently.icon] }}</span> {{ forecast.currently.temperature }}°F</div>
             <div class="card-text">Chance of rain: {{ forecast.currently.precipProbability }}</div>
 
           </div>
@@ -27,7 +27,19 @@ export default {
   name: "home",
   data() {
     return {
-      forecast: {}
+      forecast: {},
+      icons: {
+        "clear-day": "🌞",
+        "clear-night": "🌙",
+        rain: "🌦",
+        snow: " 🌨",
+        sleet: "🌧",
+        wind: " 🌬",
+        fog: "🌫",
+        cloudy: "🌥",
+        "partly-cloudy-day": "🌤",
+        "partly-cloudy-night": "🌌"
+      }
     };
   },
   mounted() {
@@ -41,3 +53,14 @@ export default {
   }
 };
 </script>
+<style>
+/* body {
+  font-size: 2em;
+} */
+.icon-temp {
+  font-size: 2em;
+}
+.emoji {
+  font-size: 2em;
+}
+</style>
