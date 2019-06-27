@@ -51,7 +51,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Add emojis
 - [x] Allow user to enter location
   - [x] Geocode location to lat long
-  - [] Update weather on page
-- [] Show location name
+  - [x] Update weather on page
+- [x] Show location name
 - [] Add weather map to page
 - [ ] Show upcoming forecast
